@@ -1,117 +1,140 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     background-color: hsl(233, 47%, 7%);
+    min-width: 375px;
+    max-width: 1440px;
+    margin: auto;
+    font-size: 15px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
 }
 
 main {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 880px;
-    height: 350px;
-    background-color: hsl(244, 38%, 16%);
-    flex-wrap: wrap;
-    border-radius: 10px;
-}
-
-h1 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
-    color: hsl(0, 0%, 100%);
-    margin-top: 10px;
-}
-
-strong {
-    color: hsl(277, 64%, 61%);
-}
-
-p {
-    font-family: 'Lexend Deca', sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 25px;
-    color: hsla(0, 0%, 100%, 0.75);
-    padding-right: 24px;
-}
-
-h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    color: hsl(0, 0%, 100%);
 }
 
 .card {
-    height: 100%;
     display: flex;
     flex-direction: column;
-    flex-basis: 50%;
-    justify-content: space-evenly;
-    padding: 0 45px ;
+    flex-wrap: wrap;
+    margin: 3rem;
+    max-width: 480px;
+    background-color: hsl(244, 38%, 16%);
+    border-radius: 1rem;
 }
 
-.img {
-    background: url(./images/image-header-desktop.jpg);
-    background-size: cover;
-    height: 100%;
-    flex-basis: 50%;
-    border-radius: 0 10px 10px 0;
+picture {
+    max-width: 100%;
+    background-color: hsl(277, 64%, 61%);
 }
 
-.overlay {
-    background-color: hsla(280,100%,43%,1.0);
-    height: 100%;
-    border-radius: 0 10px 10px 0;
-    opacity: 0.5;
+picture img {
+    max-width: 100%;
+    display: block;
+    mix-blend-mode: multiply;
 }
 
-.stats {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 24px;
+picture, picture img {
+    border-radius: 1rem 1rem 0 0;
 }
 
-span {
-    color: hsla(0, 0%, 100%, 0.6);
-    font-size: 10px;
-    display: flex;
+.stats-info {
+    margin: 0 1.25rem;
+    text-align: center;
+}
+
+.stats-info h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.75em;
+    color: hsl(0, 0%, 100%);
+    margin-top: 2rem;
+}
+
+#h1-accent {
+    color: hsl(277, 64%, 61%);
+}
+
+.stats-info p {
+    margin: 1rem 0 2rem 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.5em;
+}
+
+.stats-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.li-header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 0.5rem;
+}
+
+.li-text {
+    font-family: 'Lexend Deca', sans-serif;
     text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75em;
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-bottom: 2rem;
+    letter-spacing: 0.2em;
 }
 
-@media screen and (max-width: 720px) {
-    main {
-        width: 300px;
-        height: 580px;
+@media screen and (min-width: 1080px) {
+    html, body {
+        height: 100%;
     }
 
-    .img {
-        background: url(./images/image-header-mobile.jpg);
-        background-size: cover;
-        flex-basis: 100%;
-        height: 240px;
-        border-radius: 10px 10px 0 0;
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .card {
-        flex-basis: 100%;
-        height: 60%;
-        padding: 0 35px;
-        align-items: center;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        border-radius: 1rem;
+        max-width: 1080px;
+        min-width: 446px;
     }
-    
-    .stats {
-        flex-direction: column;
+
+    picture {
+        border-radius: 0 1rem 1rem 0;
+        max-width: 100%;
+        min-width: 50%;
+    }
+
+    picture img {
+        border-radius: 0 1rem 1rem 0;
+        min-height: 446px;
+    }
+
+    .stats-info {
+        text-align: left;
+        margin: 2rem 6rem 0 3rem;
+    }
+
+    .stats-info h1 {
+        font-size: 2.25em;
+    }
+
+    .stats-info p {
+        margin: 2rem 0 2.5rem 0;
+    }
+
+    .stats-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
+
